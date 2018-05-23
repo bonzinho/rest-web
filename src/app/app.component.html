@@ -1,0 +1,44 @@
+<ul id="slide-out" class="side-nav">
+  <li><div class="user-view">
+    <div class="background lime">
+      <img src="https://cdn.pixabay.com/photo/2018/03/03/07/14/wood-3195032_960_720.jpg">
+    </div>
+    <a href="#!"><img class="circle" src="https://secure.gravatar.com/avatar/07fe8239b5095ea72e855ca188f0de07"></a>
+    <a href="#!"><span class="white-text name">Vitor Bonzinho</span></a>
+    <a href="#!"><span class="white-text email">vitor.andre.bonzinho@gmail.com</span></a>
+  </div></li>
+  <li><div class="divider"></div></li>
+  <li><a class="subheader">Minha conta</a></li>
+  <li [routerLinkActive]="['active']"><a [routerLink]="['/profile']"><i class="material-icons">account_circle</i>Editar Meus Dados</a></li>
+  <li [routerLinkActive]="['active']"><a [routerLink]="['/password']"><i class="material-icons">security</i>Trocar Senha</a></li>
+  <li><a [routerLink]="['/logout']"><i class="material-icons">cancel</i>Sair</a></li>
+</ul>
+
+<header>
+  <nav>
+    <div class="nav-wrapper amber">
+      <div class="row">
+        <div class="col s12">
+          <a [routerLink]="['/']" class="brand-logo">Guia de restaurantes</a>
+          <ul id="nav-mobile" class="right">
+            <a data-activates="slide-out" id="showMenu"><i class="material-icons">menu</i></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <footer class="page-footer amber lighten-3">
+    <div class="footer-copyright">
+      <div class="container deep-orange-text">
+        © 2018 Copyright FEUP
+      </div>
+    </div>
+  </footer>
+</footer>

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col s12 center-align">
+        <h3>{{ restaurant.name }}</h3>
+        <p><img src="{{restaurant.photo_full_url}}" class="circle responsive-img" width="200" alt=""></p>
+        <h5>{{restaurant.description}}</h5>
+        <p>
+            <a href="" class="btn" (click)="showPhone($event)">
+                <i class="material-icons left">phone</i> {{viewPhone ? restaurant.phone : 'ver telefone'}}
+            </a>
+        </p>
+        <div *ngIf="restaurant.votes_qtd > 0; else noVotes">
+            <p>
+                <a href="" (click)="addVote($event, 1)">
+                    <i class="material-icons" [ngClass]="classToVotes(1)">star_border</i>
+                </a>
+                <a href="" (click)="addVote($event, 2)">
+                    <i class="material-icons" [ngClass]="classToVotes(2)">star_border</i>
+                </a>
+                <a href="" (click)="addVote($event, 3)">
+                    <i class="material-icons" [ngClass]="classToVotes(3)">star_border</i>
+                </a>
+                <a href="" (click)="addVote($event, 4)">
+                    <i class="material-icons" [ngClass]="classToVotes(4)">star_border</i>
+                </a>
+                <a href="" (click)="addVote($event, 5)">
+                    <i class="material-icons" [ngClass]="classToVotes(5)">star_border</i>
+                </a>
+            </p>
+            <p>{{restaurant.votes_qtd}} votos</p>
+        </div>
+        <!-- ng-template serve para mostrar conteudo quando não existir ainda votos para o restaurante (else noVotes) no div dos votos -->
+        <ng-template #noVotes>
+            <p>Este Restaurante ainda não foi avaliado, seja o primeiro a avaliar!</p>
+            <a (click)="addVote($event, 0)" class="btn">Avaliar</a>
+        </ng-template>
+    </div>
+</div>
